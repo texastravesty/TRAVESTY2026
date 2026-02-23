@@ -1,0 +1,249 @@
+@font-face {
+  font-family: 'CustomFont';
+  src: url('Assets/FONT.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: 'CustomFont', sans-serif;
+}
+
+.image-container {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 15px;
+  box-sizing: border-box;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.secret-button {
+  position: absolute;
+  left: 79.3%;
+  top: 6.6%;
+  width: calc(94.5% - 79.3%);
+  height: calc(14.2% - 6.6%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.secret-image-overlay {
+  position: absolute;
+  top: 14%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  pointer-events: none;
+}
+
+.debt-overlay {
+  position: absolute;
+  left: 19.73%;
+  top: 25%;
+  width: 31.85%;
+  height: 9.51%;
+
+  color: rgb(255, 0, 0);
+  font-size: 1.6vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vw;
+
+  /*background: rgba(255, 0, 0, 0.3); */
+}
+
+.overlay {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  font-size: 1.6vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*background: rgba(255, 0, 0, 0.3);*/ 
+}
+
+.seniors-dating-freshman {
+  color: rgb(255, 0, 0);
+  left: 54%;
+  top: 27.8%;
+  width: calc(65% - 54%);
+  height: calc(33.3% - 27.8%);
+}
+
+.fracking-costs {
+    color: rgb(255, 0, 0);
+  left: 67.7%;
+  top: 27.8%;
+  width: calc(78.8% - 67.7%);
+  height: calc(33.3% - 27.8%);
+  font-size: 1.2vw;
+}
+
+.tower-renovation-budget {
+    color: rgb(255, 0, 0);
+  left: 21.7%;
+  top: 43.1%;
+  width: calc(46.2% - 21.7%);
+  height: calc(48.8% - 43.1%);
+}
+
+.expired-bevo-bucks {
+    color: rgb(255, 0, 0);
+  left: 49.7%;
+  top: 43.1%;
+  width: calc(74.7% - 49.7%);
+  height: calc(48.8% - 43.1%);
+}
+
+.total-student-debt {
+    color: rgb(0 0, 255);
+  left: 31.3%;
+  top: 58.1%;
+  width: calc(55.5% - 31.3%);
+  height: calc(63.1% - 58.1%);
+        color: rgb(0, 0, 255);
+}
+
+.debt-per-student {
+      color: rgb(0, 0, 255);
+  left: 60.6%;
+  top: 58.1%;
+  width: calc(72% - 60.6%);
+  height: calc(62.6% - 58.1%);
+}
+
+.year-1960 {
+      color: rgb(255, 0, 0);
+  left: 23.1%;
+  top: 72.9%;
+  width: calc(32.5% - 23.1%);
+  height: calc(77.9% - 72.9%);
+}
+
+.year-1980 {
+      color: rgb(255, 0, 0);
+  left: 38.8%;
+  top: 72.9%;
+  width: calc(48.4% - 38.8%);
+  height: calc(77.9% - 72.9%);
+}
+
+.year-2000 {
+      color: rgb(255, 0, 0);
+  left: 54.6%;
+  top: 72.9%;
+  width: calc(64.1% - 54.6%);
+  height: calc(77.9% - 72.9%);
+}
+
+.year-now {
+      color: rgb(255, 0, 0);
+  left: 70.2%;
+  top: 72.9%;
+  width: calc(80.4% - 70.2%);
+  height: calc(77.9% - 72.9%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.ticker-bar {
+  width: 100vw;
+  background-color: #cc0000;
+  overflow: hidden;
+  padding: 10px 0;
+  box-shadow: inset 0 4px 6px rgba(0,0,0,0.4), inset 0 -4px 6px rgba(0,0,0,0.4);
+}
+
+.ticker-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker 15s linear infinite;
+}
+
+.ticker-track span {
+  font-family: 'Impact', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  text-shadow:
+    2px 1px 0 #000;
+  letter-spacing: 0.07em;
+}
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+
+.campaign-trailer-btn {
+  position: absolute;
+  left: 8.5%;
+  top: 38%;
+  width: 12% !important;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.timothee-btn {
+  position: absolute;
+  left: 8.5%;
+  top: 66%;
+  width: 12% !important;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.ig-popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.ig-popup-box {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.ig-close-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+} 
+/*testing*/

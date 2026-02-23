@@ -1,53 +1,85 @@
-fetch('data.json')
-  .then(response => response.json())
-  .then(data => {
-    const d = data["UT Debt Clock"];
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
 
-    function parseNum(str) {
-      return parseFloat(str.replace(/[^0-9.]/g, ''));
-    }
+</head>
+<body>
+<div class="image-container">
+<div class="image-wrapper">
+<img src="Assets/DebtClockBackground.png" alt="Debt Clock Background">
 
-    function formatDollar(num) {
-      return '$' + Math.floor(num).toLocaleString();
-    }
+<!-- University of Texas Total Debt -->
+<div class="debt-overlay" id="ut-total-debt">0</div>
 
-    function formatComma(num) {
-      return Math.floor(num).toLocaleString();
-    }
+<!-- Seniors Dating Freshman -->
+<div class="overlay seniors-dating-freshman" id="seniors-dating-freshman">0</div>
 
-    function formatPercent(num) {
-      return num.toFixed(2) + '%';
-    }
+<!-- Fracking Costs -->
+<div class="overlay fracking-costs" id="fracking-costs">0</div>
 
-    // Static values
-    document.getElementById('year-1960').textContent = d["1960 %"];
-    document.getElementById('year-1980').textContent = d["1980 %"];
-    document.getElementById('year-2000').textContent = d["2000 %"];
+<!-- Tower Renovation Budget -->
+<div class="overlay tower-renovation-budget" id="tower-renovation-budget">0</div>
 
-    // Debt Per Student (needed for Total Student Debt calculation)
-    const debtPerStudent = parseNum(d["Debt Per Student;"]);
-    const totalStudentDebt = debtPerStudent * 550000;
+<!-- Expired Bevo Bucks -->
+<div class="overlay expired-bevo-bucks" id="expired-bevo-bucks">0</div>
 
-    // Counters object: id -> { current, increment, format }
-    const counters = {
-      'ut-total-debt':          { current: parseNum(d["UT Total Debt"]),          increment: 1432,   format: formatDollar },
-      'seniors-dating-freshman':{ current: parseNum(d["Seniors Dating Freshman"]), increment: 0.5,   format: formatComma  },
-      'fracking-costs':         { current: parseNum(d["Fracking Costs"]),          increment: 1,   format: formatDollar },
-      'tower-renovation-budget':{ current: parseNum(d["Tower Renovation Budget"]), increment: 14,   format: formatDollar },
-      'expired-bevo-bucks':     { current: parseNum(d["Expired Bevo Bucks"]),      increment: 1,   format: formatDollar },
-      'total-student-debt':     { current: totalStudentDebt,                       increment: 1,   format: formatDollar },
-      'debt-per-student':       { current: debtPerStudent,                         increment: 1,   format: formatDollar },
-      'year-now':               { current: parseNum(d["Now %"]),                   increment: 0.03, format: formatPercent },
-    };
+<!-- Total Student Debt -->
+<div class="overlay total-student-debt" id="total-student-debt">0</div>
 
-    function animate() {
-      for (const id in counters) {
-        const c = counters[id];
-        c.current += c.increment;
-        document.getElementById(id).textContent = c.format(c.current);
-      }
-      setTimeout(animate, 50);
-    }
+<!-- Debt Per Student -->
+<div class="overlay debt-per-student" id="debt-per-student">0</div>
 
-    animate();
-  });
+<!-- 1960 -->
+<div class="overlay year-1960" id="year-1960">0</div>
+
+<!-- 1980 -->
+<div class="overlay year-1980" id="year-1980">0</div>
+
+<!-- 2000 -->
+<div class="overlay year-2000" id="year-2000">0</div>
+
+<!-- NOW -->
+<div class="overlay year-now" id="year-now">0</div>
+
+<!-- Secret Button -->
+<button class="secret-button" onclick="var img=document.getElementById('secret-image'); img.style.display = img.style.display === 'none' ? 'block' : 'none'"></button>
+
+<!-- Secret Image -->
+<img id="secret-image" src="Assets/SecretButton.png" alt="Secret" class="secret-image-overlay" style="display: none;">
+
+
+<!-- Campaign Trailer Button -->
+<img src="Assets/campaignTrailerButton.png" class="campaign-trailer-btn" onclick="document.getElementById('ig-popup').style.display='flex'">
+
+<img src="Assets/timotheeButton.png" class="timothee-btn" onclick="document.getElementById('timothee-popup').style.display='flex'">
+
+<!-- Instagram Popup -->
+<div id="ig-popup" class="ig-popup-overlay">
+  <div class="ig-popup-box">
+    <button class="ig-close-btn" onclick="document.getElementById('ig-popup').style.display='none'">✕</button>
+    <iframe src="https://www.instagram.com/p/DU6JlDCEd8Z/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+  </div>
+</div>
+
+<!-- Timothee Popup -->
+<div id="timothee-popup" class="ig-popup-overlay">
+  <div class="ig-popup-box">
+    <button class="ig-close-btn" onclick="document.getElementById('timothee-popup').style.display='none'">✕</button>
+    <iframe src="https://www.instagram.com/p/DU9HsLIEe1h/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+  </div>
+</div>
+
+</div>
+</div>
+<div class="ticker-bar">
+<div class="ticker-track">
+<span> VOTE KILDAY-GUESS FOR UT STUDENT BODY PRESIDENT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span> VOTE KILDAY-GUESS FOR UT STUDENT BODY PRESIDENT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span> VOTE KILDAY-GUESS FOR UT STUDENT BODY PRESIDENT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span> VOTE KILDAY-GUESS FOR UT STUDENT BODY PRESIDENT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+</div>
+</div>
+<script src="sketch.js"></script>
+</body>
+</html>

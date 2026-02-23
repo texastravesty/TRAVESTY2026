@@ -26,14 +26,14 @@ fetch('data.json')
 
     // Debt Per Student (needed for Total Student Debt calculation)
     const debtPerStudent = parseNum(d["Debt Per Student;"]);
-    const totalStudentDebt = debtPerStudent * 55000;
+    const totalStudentDebt = debtPerStudent * 550000;
 
     // Counters object: id -> { current, increment, format }
     const counters = {
-      'ut-total-debt':          { current: parseNum(d["UT Total Debt"]),          increment: 1,   format: formatDollar },
-      'seniors-dating-freshman':{ current: parseNum(d["Seniors Dating Freshman"]), increment: 1,   format: formatComma  },
+      'ut-total-debt':          { current: parseNum(d["UT Total Debt"]),          increment: 1432,   format: formatDollar },
+      'seniors-dating-freshman':{ current: parseNum(d["Seniors Dating Freshman"]), increment: 0.5,   format: formatComma  },
       'fracking-costs':         { current: parseNum(d["Fracking Costs"]),          increment: 1,   format: formatDollar },
-      'tower-renovation-budget':{ current: parseNum(d["Tower Renovation Budget"]), increment: 1,   format: formatDollar },
+      'tower-renovation-budget':{ current: parseNum(d["Tower Renovation Budget"]), increment: 14,   format: formatDollar },
       'expired-bevo-bucks':     { current: parseNum(d["Expired Bevo Bucks"]),      increment: 1,   format: formatDollar },
       'total-student-debt':     { current: totalStudentDebt,                       increment: 1,   format: formatDollar },
       'debt-per-student':       { current: debtPerStudent,                         increment: 1,   format: formatDollar },

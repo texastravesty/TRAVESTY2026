@@ -2,6 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 <div class="image-container">
@@ -9,43 +10,65 @@
 <img src="Assets/DebtClockBackground.png" alt="Debt Clock Background">
 
 <!-- University of Texas Total Debt -->
-<div class="debt-overlay"> 000 </div>
+<div class="debt-overlay" id="ut-total-debt">0</div>
 
-<!-- Seniors Dating Freshman -->
-<div class="overlay seniors-dating-freshman">100</div>
+<!-- Seniors Dating Freshmanx -->
+<div class="overlay seniors-dating-freshman" id="seniors-dating-freshman">0</div>
 
 <!-- Fracking Costs -->
-<div class="overlay fracking-costs">200</div>
+<div class="overlay fracking-costs" id="fracking-costs">0</div>
 
 <!-- Tower Renovation Budget -->
-<div class="overlay tower-renovation-budget">300</div>
+<div class="overlay tower-renovation-budget" id="tower-renovation-budget">0</div>
 
 <!-- Expired Bevo Bucks -->
-<div class="overlay expired-bevo-bucks">400</div>
+<div class="overlay expired-bevo-bucks" id="expired-bevo-bucks">0</div>
 
 <!-- Total Student Debt -->
-<div class="overlay total-student-debt">500</div>
+<div class="overlay total-student-debt" id="total-student-debt">0</div>
 
 <!-- Debt Per Student -->
-<div class="overlay debt-per-student">600</div>
+<div class="overlay debt-per-student" id="debt-per-student">0</div>
 
 <!-- 1960 -->
-<div class="overlay year-1960">700</div>
+<div class="overlay year-1960" id="year-1960">0</div>
 
 <!-- 1980 -->
-<div class="overlay year-1980">700</div>
+<div class="overlay year-1980" id="year-1980">0</div>
 
 <!-- 2000 -->
-<div class="overlay year-2000">700</div>
+<div class="overlay year-2000" id="year-2000">0</div>
 
 <!-- NOW -->
-<div class="overlay year-now">700</div>
+<div class="overlay year-now" id="year-now">0</div>
 
 <!-- Secret Button -->
 <button class="secret-button" onclick="var img=document.getElementById('secret-image'); img.style.display = img.style.display === 'none' ? 'block' : 'none'"></button>
 
 <!-- Secret Image -->
 <img id="secret-image" src="Assets/SecretButton.png" alt="Secret" class="secret-image-overlay" style="display: none;">
+
+
+<!-- Campaign Trailer Button -->
+<img src="Assets/campaignTrailerButton.png" class="campaign-trailer-btn" onclick="document.getElementById('ig-popup').style.display='flex'">
+
+<img src="Assets/timotheeButton.png" class="timothee-btn" onclick="document.getElementById('timothee-popup').style.display='flex'">
+
+<!-- Instagram Popup -->
+<div id="ig-popup" class="ig-popup-overlay">
+  <div class="ig-popup-box">
+    <button class="ig-close-btn" onclick="document.getElementById('ig-popup').style.display='none'">✕</button>
+    <iframe src="https://www.instagram.com/p/DU6JlDCEd8Z/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+  </div>
+</div>
+
+<!-- Timothee Popup -->
+<div id="timothee-popup" class="ig-popup-overlay">
+  <div class="ig-popup-box">
+    <button class="ig-close-btn" onclick="document.getElementById('timothee-popup').style.display='none'">✕</button>
+    <iframe src="https://www.instagram.com/p/DU9HsLIEe1h/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+  </div>
+</div>
 
 </div>
 </div>
@@ -57,5 +80,6 @@
 <span> VOTE KILDAY-GUESS FOR UT STUDENT BODY PRESIDENT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 </div>
 </div>
+<script src="sketch.js"></script>
 </body>
 </html>
